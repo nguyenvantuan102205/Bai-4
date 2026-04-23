@@ -1,0 +1,194 @@
+/* 1. Khai báo font DOTMATRI từ file nội bộ của bạn */
+@font-face {
+  font-family: "DotMatrix";
+  src: url("DOTMATRI.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  /* Bảng màu rực rỡ pha trộn màu 17FFC4 */
+  --color-aqua: #17ffc4;
+  --color-cyan: #17ffee;
+  --color-electric: #cc17ff;
+  --color-violet: #6917d0;
+  --color-pink: #ff1791;
+  --color-black: #262626;
+
+  --color-text: var(--color-black);
+  --color-border: rgba(38, 38, 38, 0.1);
+
+  --font-family-body: "Manrope", -apple-system, sans-serif;
+  --font-family-display: "Fraunces", serif;
+  --font-family-bill: "DotMatrix", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-body);
+  color: var(--color-text);
+  /* Nền Gradient pha trộn Aurora */
+  background: linear-gradient(
+    135deg,
+    var(--color-aqua) 0%,
+    var(--color-cyan) 25%,
+    var(--color-electric) 55%,
+    var(--color-pink) 80%,
+    var(--color-violet) 100%
+  );
+  background-attachment: fixed;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* WRAPPER ĐỂ NÚT BACK CUỘN THEO TRANG */
+.back-nav-wrapper {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.back-link {
+  position: absolute;
+  left: 20px;
+  pointer-events: auto;
+  color: var(--color-black);
+  text-decoration: none;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.2s ease;
+  font-size: 0.85rem;
+}
+
+.back-link:hover {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--color-pink);
+  transform: translateX(3px);
+}
+
+/* Container chính co giãn */
+.checkout-container {
+  width: 100%;
+  max-width: 550px;
+  margin: 80px auto 40px; /* Cách top 80px để không dính nút Back */
+  padding: 0 15px;
+}
+
+.checkout-title {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Card hiệu ứng kính mờ */
+.content-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Item sản phẩm */
+.item-card {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-image {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.price-tag {
+  font-family: var(--font-family-bill);
+  color: var(--color-violet);
+  font-size: 1.1rem;
+}
+
+/* PHẦN TỔNG TIỀN */
+.total-row {
+  border-top: 1px dashed var(--color-border);
+  margin-top: 20px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-label {
+  font-family: var(--font-family-bill);
+  font-size: 1.2rem;
+  /* margin-left: 12px để thẳng hàng với ảnh bên trong item-card (vốn có padding 12px) */
+  margin-left: 12px;
+  color: var(--color-black);
+}
+
+.total-amount {
+  font-family: var(--font-family-bill);
+  font-size: 2rem;
+  color: var(--color-pink);
+  margin-right: 12px;
+}
+
+/* Nút thanh toán */
+.btn-brand {
+  background: linear-gradient(
+    90deg,
+    var(--color-violet),
+    var(--color-electric)
+  );
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 18px;
+  font-weight: 800;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 20px rgba(105, 23, 208, 0.25);
+  transition: 0.3s;
+}
+
+.btn-brand:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(105, 23, 208, 0.4);
+}
+
+/* Cài đặt Radio */
+.form-check-input:checked {
+  background-color: var(--color-electric);
+  border-color: var(--color-electric);
+}
+
+@media (max-width: 480px) {
+  .checkout-container {
+    margin-top: 70px;
+  }
+  .total-amount {
+    font-size: 1.6rem;
+  }
+  .content-card {
+    padding: 18px;
+  }
+}
