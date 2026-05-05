@@ -1,4 +1,4 @@
-/* 1. Khai báo font DOTMATRI từ file nội bộ của bạn */
+
 @font-face {
   font-family: "DotMatrix";
   src: url("DOTMATRI.ttf") format("truetype");
@@ -7,7 +7,7 @@
 }
 
 :root {
-  /* Bảng màu rực rỡ pha trộn màu 17FFC4 */
+
   --color-aqua: #17ffc4;
   --color-cyan: #17ffee;
   --color-electric: #cc17ff;
@@ -30,7 +30,7 @@
 body {
   font-family: var(--font-family-body);
   color: var(--color-text);
-  /* Nền Gradient pha trộn Aurora */
+
   background: linear-gradient(
     135deg,
     var(--color-aqua) 0%,
@@ -44,7 +44,7 @@ body {
   min-height: 100vh;
 }
 
-/* WRAPPER ĐỂ NÚT BACK CUỘN THEO TRANG */
+
 .back-nav-wrapper {
   position: absolute;
   top: 25px;
@@ -76,11 +76,10 @@ body {
   transform: translateX(3px);
 }
 
-/* Container chính co giãn */
 .checkout-container {
   width: 100%;
   max-width: 550px;
-  margin: 80px auto 40px; /* Cách top 80px để không dính nút Back */
+  margin: 80px auto 40px; 
   padding: 0 15px;
 }
 
@@ -91,7 +90,7 @@ body {
   margin-bottom: 30px;
 }
 
-/* Card hiệu ứng kính mờ */
+
 .content-card {
   background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(12px);
@@ -101,7 +100,7 @@ body {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
-/* Item sản phẩm */
+
 .item-card {
   background: rgba(255, 255, 255, 0.5);
   border: 1px solid var(--color-border);
@@ -126,7 +125,7 @@ body {
   font-size: 1.1rem;
 }
 
-/* PHẦN TỔNG TIỀN */
+
 .total-row {
   border-top: 1px dashed var(--color-border);
   margin-top: 20px;
@@ -139,7 +138,7 @@ body {
 .total-label {
   font-family: var(--font-family-bill);
   font-size: 1.2rem;
-  /* margin-left: 12px để thẳng hàng với ảnh bên trong item-card (vốn có padding 12px) */
+  
   margin-left: 12px;
   color: var(--color-black);
 }
@@ -151,7 +150,7 @@ body {
   margin-right: 12px;
 }
 
-/* Nút thanh toán */
+
 .btn-brand {
   background: linear-gradient(
     90deg,
@@ -175,7 +174,7 @@ body {
   box-shadow: 0 10px 25px rgba(105, 23, 208, 0.4);
 }
 
-/* Cài đặt Radio */
+
 .form-check-input:checked {
   background-color: var(--color-electric);
   border-color: var(--color-electric);
